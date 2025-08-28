@@ -27,6 +27,14 @@ function coinReduced(){
     getElement('coin-count').innerText=finalCoin;
 }
 
+// Heart Increasing
+function heartIncreased(){
+    const heartCount=getInnerTextNumber('heart-count');
+    // calculate
+    const finalHeart=heartCount+1;
+    // assign
+    getElement('heart-count').innerText=finalHeart;
+}
 
 
 
@@ -67,6 +75,10 @@ getElement('btn-emergency-call').addEventListener('click',function(e){
     coinReduced();
 })
 
+// heart button
+getElement('emergency-heart-icon').addEventListener('click',function(){
+    heartIncreased();
+})
 // copy button
 // getElement('btn-emergency-copy').addEventListener('click',function(){
 //     // copy the number
