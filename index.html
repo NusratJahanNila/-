@@ -4,8 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>জরুরি সেবা ডিরেক্টরি</title>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Madurai:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Daisy UI -->
+     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Style -->
+    <style>
+        .hind-madurai-regular {
+            font-family: "Hind Madurai", sans-serif;
+        }
+    </style>
 </head>
-<body>
-    
+<body class=".hind-madurai-regular">
+    <header>
+        <nav class="flex justify-between items-center p-3 md:px-[60px] md:py-6">
+            <!-- Left Div -->
+             <div class="flex justify-between items-center gap-2 md:gap-4">
+                <div class="md:w-[50px] md:h-[50px] h-[30px] w-[30px]">
+                    <img src="./assets/logo.png" alt="">
+                </div>
+                <div>
+                    <h2 class="md:text-[24px] text-[#006747] font-bold text-[16px]">Emergency <br>Service</h2>
+                </div>
+             </div>
+
+
+            <!-- Right Div -->
+            <div class="flex justify-between items-center gap-5">
+                <!-- heart -->
+                <div class="flex justify-between items-center gap-[10px]">
+                    <p class="font-bold">0</p>
+                    <img src="./assets/heart.png" alt="" class="w-[30px]">
+                </div>
+                <!-- coin -->
+                <div class="flex justify-between items-center gap-[10px]">
+                    <p class="font-bold">100</p>
+                    <img src="./assets/coin.png" alt="" class="w-6">
+                </div>
+                <!-- copy -->
+                <div>
+                    <button class="btn rounded-[50px] bg-[#00A63E] text-white"><span>0</span> Copy</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+    </main>
 </body>
 </html>
