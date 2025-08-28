@@ -43,17 +43,17 @@
             <div class="flex justify-between items-center gap-5">
                 <!-- heart -->
                 <div class="flex justify-between items-center gap-[10px]">
-                    <p class="font-bold">0</p>
+                    <p id="heart-count" class="font-bold">0</p>
                     <img src="./assets/heart.png" alt="" class="w-[30px]">
                 </div>
                 <!-- coin -->
                 <div class="flex justify-between items-center gap-[10px]">
-                    <p class="font-bold">100</p>
+                    <p id="coin-count" class="font-bold">100</p>
                     <img src="./assets/coin.png" alt="" class="w-6">
                 </div>
                 <!-- copy -->
                 <div>
-                    <button class="btn rounded-[50px] bg-[#00A63E] text-white"><span>0</span> Copy</button>
+                    <button class="btn rounded-[50px] bg-[#00A63E] text-white"><span id="copy-count">0</span> Copy</button>
                 </div>
             </div>
         </nav>
@@ -81,7 +81,7 @@
                                 <img src="./assets/emergency.png" alt="" class="w-8">
                             </div>
                             <div class="text-2xl">
-                                <i class="fa-regular fa-heart "></i>
+                                <i id="emergency-heart-icon" class="fa-regular fa-heart "></i>
                             </div>
                         </div>
                         <div>
@@ -92,15 +92,15 @@
                             </div>
                             <!-- Contact -->
                             <div class="mb-6">
-                                <h2 class="text-[#111111] font-bold text-[32px]">999</h2>
+                                <h2 id="emergency-copy-number" class="text-[#111111] font-bold text-[32px]">999</h2>
                                 <p class="text-lg text-[#5c5c5c] bg-[#f2f2f2] w-fit
                                 p-3 rounded-3xl">সার্বজনীন</p>
                             </div>
                             <!-- buttons -->
                             <div class="flex gap-2">
-                                <button class="btn rounded-lg w-1/2 text-[#5c5c5c]
+                                <button id="btn-emergency-copy" type="button" class="btn rounded-lg w-1/2 text-[#5c5c5c]
                                 border-1 border-[#d4d6d5]"><i class="fa-regular fa-copy"></i> Copy</button> 
-                                <button class="btn rounded-lg w-1/2 bg-[#00A63E] text-white border-none"><i class="fa-solid fa-phone text-white"></i> Call</button> 
+                                <button id="btn-emergency-call" class="btn rounded-lg w-1/2 bg-[#00A63E] text-white border-none"><i class="fa-solid fa-phone text-white"></i> Call</button> 
                             </div>
                         </div>
                     </div>
@@ -359,5 +359,10 @@
             </div>
         </section>
     </main>
+
+
+
+
+    <script src="./js/script.js"></script>
 </body>
 </html>
