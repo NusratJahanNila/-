@@ -14,10 +14,10 @@ function coinReduced(){
     const coinCount=getInnerTextNumber('coin-count');
     const reduceCoin=parseInt(20)
     // Alert
-    if(coinCount< 20){
-        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
-        return;
-    }
+    // if(coinCount< 20){
+    //     alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+    //     return;
+    // }
     //  calculate
     const finalCoin=coinCount-reduceCoin;
     // assign
@@ -46,7 +46,6 @@ function copyIncreased(){
 // Call History
 const callHistoryData = [];
 
-
 // Clear Button funcitonalities:
 
 getElement('btn-history-clear').addEventListener('click',function(){
@@ -61,41 +60,83 @@ getElement('btn-history-clear').addEventListener('click',function(){
 // -----------------------------------------------------------------------------------------------------
 
 // Call Button
+// getElement('btn-emergency-call').addEventListener('click',function(e){
+//     e.preventDefault();
+//     const coinCount=getInnerTextNumber('coin-count');
+//     if(coinCount>=20){
+//         alert('জাতীয় জরুরি সেবায় কল করা হচ্ছে : 999')
+//     }
+//     // function call
+//     coinReduced();
+//     // call history   
+//     const data={
+//         service: 'জাতীয় জরুরি সেবা',
+//         mobile: 999,
+//         time:new Date().toLocaleTimeString()
+//     }
+//     callHistoryData.push(data);
+//     // console.log(callHistoryData);
+//     const historyContainer= getElement('history-container')
+//     historyContainer.innerText=''
+//     for(const data of callHistoryData){
+//         const div=document.createElement('div');
+//         div.innerHTML=`
+//             <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+//                 <div class="flex justify-between items-center">
+//                     <div>
+//                         <h2 class="text-sm">${data.service}</h2>
+//                         <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+//                     </div>
+//                     <div>
+//                         <p class="text-lg">${data.time}</p>
+//                     </div>
+//                 </div>
+//             </div>
+//         `
+//         historyContainer.appendChild(div)
+//     }
+// })
 getElement('btn-emergency-call').addEventListener('click',function(e){
     e.preventDefault();
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('জাতীয় জরুরি সেবায় কল করা হচ্ছে : 999')
-    }
-    // function call
-    coinReduced();
-    // call history   
-    const data={
-        service: 'জাতীয় জরুরি সেবা',
-        mobile: 999,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history   
+        const data={
+            service: 'জাতীয় জরুরি সেবা',
+            mobile: 999,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
     }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
+    }
+    
 })
 
 // heart button
@@ -120,7 +161,6 @@ getElement('btn-emergency-copy').addEventListener('click',function(){
 
 
 
-
 // -----------------------------------------------------------------------------------------------------
 // Police
 // -----------------------------------------------------------------------------------------------------
@@ -132,36 +172,42 @@ getElement('btn-police-call').addEventListener('click',function(e){
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('পুলিশের নম্বরে কল করা হচ্ছে : 999')
-    }
-    // function call
-    coinReduced();
-    // call history
-    const data={
-        service: 'পুলিশ',
-        mobile: 999,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history
+        const data={
+            service: 'পুলিশ',
+            mobile: 999,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
     }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
+    }
+    
 })
 
 // heart button
@@ -197,36 +243,42 @@ getElement('btn-fire-call').addEventListener('click',function(e){
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('ফায়ার সার্ভিস নম্বরে কল করা হচ্ছে : 999')
-    }
-    // function call
-    coinReduced();
-    // call history
-    const data={
-        service: 'ফায়ার সার্ভিস',
-        mobile: 999,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history
+        const data={
+            service: 'ফায়ার সার্ভিস',
+            mobile: 999,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
     }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
+    }
+    
 })
 
 // heart button
@@ -262,36 +314,42 @@ getElement('btn-ambulance-call').addEventListener('click',function(e){
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('অ্যাম্বুলেন্স নম্বরে কল করা হচ্ছে : 1994999999')
-    }
-    // function call
-    coinReduced();
-    // call history
-    const data={
-        service: 'অ্যাম্বুলেন্স',
-        mobile: 1994999999,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history
+        const data={
+            service: 'অ্যাম্বুলেন্স',
+            mobile: 1994999999,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
     }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
+    }
+    
 })
 
 // heart button
@@ -327,36 +385,42 @@ getElement('btn-woman-call').addEventListener('click',function(e){
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('নারী ও শিশু সহায়তা নম্বরে কল করা হচ্ছে : 109')
-    }
-    // function call
-    coinReduced();
-    // call history
-    const data={
-        service: 'নারী ও শিশু সহায়তা',
-        mobile: 109 ,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history
+        const data={
+            service: 'নারী ও শিশু সহায়তা',
+            mobile: 109 ,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
     }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
+    }
+    
 })
 
 // heart button
@@ -392,36 +456,42 @@ getElement('btn-anti-corruption-call').addEventListener('click',function(e){
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('দুদক নম্বরে কল করা হচ্ছে : 106')
-    }
-    // function call
-    coinReduced();
-    // call history
-    const data={
-        service: 'দুদক',
-        mobile: 106 ,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history
+        const data={
+            service: 'দুদক',
+            mobile: 106 ,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
     }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
+    }
+    
 })
 
 // heart button
@@ -457,36 +527,42 @@ getElement('btn-electricity-call').addEventListener('click',function(e){
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('বিদ্যুৎ অফিসের নম্বরে কল করা হচ্ছে : 16216')
-    }
-    // function call
-    coinReduced();
-    // call history
-    const data={
-        service: 'বিদ্যুৎ বিভ্রাট',
-        mobile: 16216 ,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history
+        const data={
+            service: 'বিদ্যুৎ বিভ্রাট',
+            mobile: 16216 ,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
     }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
+    }
+    
 })
 
 // heart button
@@ -522,36 +598,42 @@ getElement('btn-brac-call').addEventListener('click',function(e){
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('ব্র্যাক অফিসের নম্বরে কল করা হচ্ছে : 16445')
-    }
-    // function call
-    coinReduced();
-    // call history
-    const data={
-        service: 'ব্র্যাক ',
-        mobile: 16445 ,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history
+        const data={
+            service: 'ব্র্যাক ',
+            mobile: 16445 ,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
     }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
+    }
+    
 })
 
 // heart button
@@ -586,35 +668,40 @@ getElement('btn-railway-call').addEventListener('click',function(e){
     const coinCount=getInnerTextNumber('coin-count');
     if(coinCount>=20){
         alert('বাংলাদেশ রেলওয়ে অফিসের নম্বরে কল করা হচ্ছে : 163')
-    }
-    // function call
-    coinReduced();
-    // call history
-    const data={
-        service: 'বাংলাদেশ রেলওয়ে',
-        mobile: 163 ,
-        time:new Date().toLocaleTimeString()
-    }
-    callHistoryData.push(data);
-    // console.log(callHistoryData);
-    const historyContainer= getElement('history-container')
-    historyContainer.innerText=''
-    for(const data of callHistoryData){
-        const div=document.createElement('div');
-        div.innerHTML=`
-            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
-                <div class="flex justify-between items-center">
-                    <div>
-                        <h2 class="text-sm">${data.service}</h2>
-                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
-                    </div>
-                    <div>
-                        <p class="text-lg">${data.time}</p>
+
+        // function call
+        coinReduced();
+        // call history
+        const data={
+            service: 'বাংলাদেশ রেলওয়ে',
+            mobile: 163 ,
+            time:new Date().toLocaleTimeString()
+        }
+        callHistoryData.push(data);
+        // console.log(callHistoryData);
+        const historyContainer= getElement('history-container')
+        historyContainer.innerText=''
+        for(const data of callHistoryData){
+            const div=document.createElement('div');
+            div.innerHTML=`
+                <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h2 class="text-sm">${data.service}</h2>
+                            <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                        </div>
+                        <div>
+                            <p class="text-lg">${data.time}</p>
+                        </div>
                     </div>
                 </div>
-            </div>
-        `
-        historyContainer.appendChild(div)
+            `
+            historyContainer.appendChild(div)
+        }
+    }
+    else{
+        alert('কয়েন সংখ্যা ২০ এর কম! কল করা সম্ভব নয়।')
+        return;
     }
 })
 
