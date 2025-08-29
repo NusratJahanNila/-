@@ -36,34 +36,46 @@ function heartIncreased(){
     getElement('heart-count').innerText=finalHeart;
 }
 
+// Copy button
+function copyIncreased(){
+    const copyCount=getInnerTextNumber('copy-count');
+    // calculate
+    const finalCopy=copyCount+1;
+    // assign
+    getElement('copy-count').innerText=finalCopy;
+}
+// Call History
+const callHistoryData = [];
 
+function history(){
+    const data={
+        service: 'জাতীয় জরুরি সেবা',
+        mobile: 999,
+        time:new Date().toLocaleTimeString()
+    }
+    callHistoryData.push(data);
+    // console.log(callHistoryData);
+    const historyContainer= getElement('history-container')
+    historyContainer.innerText=''
+    for(const data of callHistoryData){
+        const div=document.createElement('div');
+        div.innerHTML=`
+            <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <h2 class="text-sm">${data.service}</h2>
+                        <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+                    </div>
+                    <div>
+                        <p class="text-lg">${data.time}</p>
+                    </div>
+                </div>
+            </div>
+        `
+        historyContainer.appendChild(div)
+    }
+}
 
-
-// // Copy-Paste the number:
-// // reusable function
-// function setupCopyButton(buttonId, targetId) {
-//     const button = getElement(buttonId);
-//     const target = getElement(targetId);
-
-//     if (!button || !target) return; // safety check
-
-//     button.addEventListener('click', async function (e) {
-//         e.preventDefault();
-//         const copyText = target.innerText.trim();
-//         try {
-//             await navigator.clipboard.writeText(copyText);
-//             alert("নম্বর কপি হয়েছে: " + copyText);
-//         } catch (err) {
-//             const ta = document.createElement('textarea');
-//             ta.value = copyText;
-//             document.body.appendChild(ta);
-//             ta.select();
-//             try { document.execCommand('copy'); } catch(e) {}
-//             document.body.removeChild(ta);
-//             alert("Copied: " + copyText);
-//         }
-//     });
-// }
 // -----------------------------------------------------------------------------------------------------
 // For Emergency call
 // -----------------------------------------------------------------------------------------------------
@@ -71,21 +83,56 @@ function heartIncreased(){
 // Call Button
 getElement('btn-emergency-call').addEventListener('click',function(e){
     e.preventDefault();
-
+    // function call
     coinReduced();
+    // history
+    // const data={
+    //     service: 'জাতীয় জরুরি সেবা',
+    //     mobile: 999,
+    //     time:new Date().toLocaleTimeString()
+    // }
+    // callHistoryData.push(data);
+    // // console.log(callHistoryData);
+    // const historyContainer= getElement('history-container')
+    // historyContainer.innerText=''
+    // for(const data of callHistoryData){
+    //     const div=document.createElement('div');
+    //     div.innerHTML=`
+    //         <div class=" p-4 bg-[#fafafa] rounded-lg mb-2">
+    //             <div class="flex justify-between items-center">
+    //                 <div>
+    //                     <h2 class="text-sm">${data.service}</h2>
+    //                     <p class="text-[5C5C5C] mt-1">${data.mobile}</p>
+    //                 </div>
+    //                 <div>
+    //                     <p class="text-lg">${data.time}</p>
+    //                 </div>
+    //             </div>
+    //         </div>
+    //     `
+    //     historyContainer.appendChild(div)
+    // }
+    history();
 })
 
 // heart button
 getElement('emergency-heart-icon').addEventListener('click',function(){
     heartIncreased();
 })
-// copy button
-// getElement('btn-emergency-copy').addEventListener('click',function(){
-//     // copy the number
-//     setupCopyButton('btn-emergency-copy', 'emergency-copy-number');
-//     // Increase copy number
-//     copyIncreased();
+
+// Copy paste Button
+getElement('btn-emergency-copy').addEventListener('click',function(){
+    const numToCopy=getInnerTextNumber('emergency-copy-number');
+
+    //alert
+    alert('নম্বর কপি হয়েছে :999')
+
+    //copy-paste
+    navigator.clipboard.writeText(numToCopy).then(()=> {});
+
+    // Increase copy number
+    copyIncreased();
     
-// })
+})
 
 
